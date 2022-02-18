@@ -10,6 +10,20 @@ function App() {
       <div className="main">
         <SudokuSolverVisualizer />
       </div>
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </>
   );
 }
