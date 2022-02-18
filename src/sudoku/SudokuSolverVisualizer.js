@@ -70,49 +70,55 @@ const SudokuSolverVisualizer = () => {
   };
 
   return (
-    <div>
+    <div className="sudokusolver-container">
       <div>{grid && <Grid grid={grid} />}</div>
-      <button
-        style={{ padding: "2rem", fontSize: "2rem", cursor: "pointer" }}
-        onClick={async () => {
-          timeouts.forEach((timeout) => {
-            clearTimeout(timeout);
-          });
-          setTimeouts([]);
-          resetGrid();
-          setStartAnimation(true);
-        }}
-      >
-        Solve
-      </button>
-      <button
-        style={{ padding: "2rem", fontSize: "2rem", cursor: "pointer" }}
-        onClick={() => {
-          timeouts.forEach((timeout) => {
-            clearTimeout(timeout);
-          });
-          setTimeouts([]);
+      <div style={{ marginTop: "1rem" }}>
+        <a
+          className="sudoku-btn"
+          onClick={async () => {
+            timeouts.forEach((timeout) => {
+              clearTimeout(timeout);
+            });
+            setTimeouts([]);
+            resetGrid();
+            setStartAnimation(true);
+          }}
+        >
+          Solve
+        </a>
+        <a
+          className="sudoku-btn"
+          onClick={() => {
+            timeouts.forEach((timeout) => {
+              clearTimeout(timeout);
+            });
+            setTimeouts([]);
 
-          resetGrid();
-        }}
-      >
-        Reset
-      </button>
-      <select
-        style={{ padding: "2rem", fontSize: "2rem" }}
-        onChange={(event) => {
-          setSolvingSpeed(event.target.value);
-        }}
-        defaultValue="DEFAULT"
-      >
-        <option value="DEFAULT" disabled>
-          Select Speed
-        </option>
-        <option value={4}>Very Fast</option>
-        <option value={20}>Fast</option>
-        <option value={50}>Normal</option>
-        <option value={200}>Slow</option>
-      </select>
+            resetGrid();
+          }}
+        >
+          Reset
+        </a>
+        <select
+          style={{
+            padding: "1rem",
+            fontSize: "2rem",
+            border: "3px solid #f97316",
+          }}
+          onChange={(event) => {
+            setSolvingSpeed(event.target.value);
+          }}
+          defaultValue="DEFAULT"
+        >
+          <option value="DEFAULT" disabled>
+            Select Speed
+          </option>
+          <option value={4}>Very Fast</option>
+          <option value={20}>Fast</option>
+          <option value={50}>Normal</option>
+          <option value={200}>Slow</option>
+        </select>
+      </div>
     </div>
   );
 };

@@ -27,8 +27,8 @@ const borderBottom = (row, col) => {
 
 const Node = ({ row, col, grid }) => {
   let styles = {
-    height: "5rem",
-    width: "5rem",
+    height: "3rem",
+    width: "3rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -38,6 +38,7 @@ const Node = ({ row, col, grid }) => {
     borderLeft: borderLeft(row, col),
     borderRight: borderRight(row, col),
     borderTop: borderTop(row, col),
+    backgroundColor: "white",
   };
 
   if (grid[row][col].isFixingMove) {
