@@ -72,33 +72,47 @@ const SudokuSolverVisualizer = () => {
   return (
     <div className="sudokusolver-container">
       <div>{grid && <Grid grid={grid} />}</div>
-      <div style={{ marginTop: "1rem" }}>
-        <a
-          className="sudoku-btn"
-          onClick={async () => {
-            timeouts.forEach((timeout) => {
-              clearTimeout(timeout);
-            });
-            setTimeouts([]);
-            resetGrid();
-            setStartAnimation(true);
+      <div
+        style={{
+          marginTop: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            marginBottom: "0.3rem",
           }}
         >
-          Solve
-        </a>
-        <a
-          className="sudoku-btn"
-          onClick={() => {
-            timeouts.forEach((timeout) => {
-              clearTimeout(timeout);
-            });
-            setTimeouts([]);
+          <a
+            className="sudoku-btn"
+            style={{ marginRight: "0.3rem" }}
+            onClick={async () => {
+              timeouts.forEach((timeout) => {
+                clearTimeout(timeout);
+              });
+              setTimeouts([]);
+              resetGrid();
+              setStartAnimation(true);
+            }}
+          >
+            Solve
+          </a>
+          <a
+            className="sudoku-btn"
+            onClick={() => {
+              timeouts.forEach((timeout) => {
+                clearTimeout(timeout);
+              });
+              setTimeouts([]);
 
-            resetGrid();
-          }}
-        >
-          Reset
-        </a>
+              resetGrid();
+            }}
+          >
+            Reset
+          </a>
+        </div>
         <select
           style={{
             padding: "1rem",

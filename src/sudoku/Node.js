@@ -1,3 +1,4 @@
+import "./Node.css";
 const BLACK_BORDER = "8px solid black";
 const GRAY_BORDER = "8px solid DarkGray";
 
@@ -27,13 +28,10 @@ const borderBottom = (row, col) => {
 
 const Node = ({ row, col, grid }) => {
   let styles = {
-    height: "3rem",
-    width: "3rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     fontWeight: 800,
-    fontSize: "2rem",
     borderBottom: borderBottom(row, col),
     borderLeft: borderLeft(row, col),
     borderRight: borderRight(row, col),
@@ -60,7 +58,7 @@ const Node = ({ row, col, grid }) => {
   }
 
   return (
-    <span style={{ ...styles }}>
+    <span className="node" style={{ ...styles }}>
       {grid[row][col].value === 0 ? "" : grid[row][col].value}
     </span>
   );

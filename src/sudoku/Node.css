@@ -1,0 +1,23 @@
+.node {
+    height: 3rem;
+    width: 3rem;
+    font-size: 2rem;
+   
+} 
+
+@media (max-width: 700px) {
+    .node {
+        height: 2rem;
+        width: 2rem;
+        font-size: 1.3rem;
+    } 
+    }
+
+
+@media (max-width: 500px) {
+    .node {
+        height: 1.5rem;
+        width: 1.5rem;
+        font-size: 1rem;    
+    } 
+}
